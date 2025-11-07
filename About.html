@@ -187,8 +187,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 76, 151, 0.4), rgba(0, 102, 204, 0.5)),
-                url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background: linear-gradient(rgba(0, 76, 151, 0.6), rgba(0, 102, 204, 0.7)),
+                        url('https://images.unsplash.com/photo-1593941707882-a5bba5331f2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center 30%;
             background-attachment: fixed;
@@ -197,17 +197,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.3) 0%, rgba(0, 76, 151, 0.6) 100%);
-            z-index: -1;
         }
 
         .hero h1 {
@@ -508,9 +497,343 @@
             font-size: 18px;
         }
 
+        /* Page Header */
+        .page-header {
+            background:
+                linear-gradient(135deg, rgba(0, 76, 151, 0.85) 0%, rgba(0, 102, 204, 0.75) 100%),
+                url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center 65%;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .page-header h1:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 40px auto 50px;
+            font-weight: 300;
+            line-height: 1.7;
+            opacity: 0.95;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .breadcrumb {
+            display: inline-flex;
+            justify-content: center;
+            list-style: none;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 12px 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .breadcrumb li {
+            margin: 0 8px;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .breadcrumb li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .breadcrumb li a:hover {
+            color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .breadcrumb li:after {
+            content: '›';
+            margin-left: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+        }
+
+        .breadcrumb li:last-child:after {
+            content: '';
+        }
+
+        .decoration {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .decoration.circle-1 {
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: 15%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decoration.circle-2 {
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            bottom: 20%;
+            right: 12%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .decoration.line {
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+            top: 30%;
+            right: 20%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Story Section */
+        .story {
+            background-color: var(--light-gray);
+        }
+
+        .story-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h2 {
+            color: var(--dark-blue);
+            margin-bottom: 25px;
+        }
+
+        .story-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .story-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* About Intro */
+        .about-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-intro h2 {
+            color: var(--dark-blue);
+            margin-bottom: 30px;
+        }
+
+        .about-intro p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* What We Do */
+        .what-we-do {
+            background-color: var(--light-gray);
+        }
+
+        .what-we-do-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .what-we-do-text {
+            flex: 1;
+        }
+
+        .what-we-do-text h2 {
+            color: var(--dark-blue);
+            margin-bottom: 25px;
+        }
+
+        .what-we-do-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .what-we-do-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .what-we-do-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .reason-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .reason-icon {
+            font-size: 48px;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+        }
+
+        .reason-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Mission Vision Values */
+        .mission-vision {
+            background-color: var(--light-gray);
+        }
+
+        .mvv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .mvv-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .mvv-icon {
+            font-size: 48px;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+        }
+
+        .mvv-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+
+        .values-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .values-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .values-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
         /* CTA Section */
         .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 76, 151, 0.9)), url('https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 76, 151, 0.9)), url('https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -612,12 +935,16 @@
                 font-size: 2.6rem;
             }
 
-            .about-content {
+            .about-content, .story-content, .what-we-do-content {
                 flex-direction: column;
             }
 
-            .about-image {
+            .about-image, .story-image, .what-we-do-image {
                 margin-top: 30px;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
             }
         }
 
@@ -665,8 +992,20 @@
                 font-size: 2.2rem;
             }
 
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
             .cta h2 {
                 font-size: 2.2rem;
+            }
+
+            .page-header {
+                background-attachment: scroll;
+            }
+
+            .decoration {
+                display: none;
             }
         }
 
@@ -686,6 +1025,24 @@
             .value-card, .service-card {
                 min-width: 100%;
             }
+
+            .page-header h1 {
+                font-size: 1.9rem;
+            }
+
+            .breadcrumb {
+                flex-direction: column;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .breadcrumb li {
+                margin: 5px 0;
+            }
+
+            .breadcrumb li:after {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -701,221 +1058,138 @@
             </button>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="About.html">Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">How to Purchase</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="how-to-purchase.html">How to Purchase</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Page Header -->
+    <section class="page-header">
+        <!-- Decorative Elements -->
+        <div class="decoration circle-1"></div>
+        <div class="decoration circle-2"></div>
+        <div class="decoration line"></div>
+
         <div class="container">
-            <h1>Your Reliable Partner In Vehicle Importation & Registration</h1>
-            <p>We handle the paperwork, customs, and logistics so you can focus on the drive ahead.</p>
-            <div class="hero-btns">
-                <a href="#" class="btn">Browse Available Cars</a>
-                <a href="#" class="btn btn-outline">Start Your Import</a>
+            <h1>OUR STORY</h1>
+            <p>At Fsmaky Global, we're more than just importers - we're your trusted partners in making vehicle ownership accessible, transparent, and completely worry-free. Your journey begins with us.</p>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>OUR STORY</h2>
+                    <p>Founded with a vision to transform the vehicle importation industry in Zimbabwe, Fsmaky Global Pvt Ltd has grown from a small startup to a trusted partner for individuals and businesses seeking reliable vehicle importation services.</p>
+                    <p>Our journey began when our founders experienced firsthand the challenges and complexities of importing vehicles - the confusing paperwork, unexpected costs, and lengthy delays. We knew there had to be a better way.</p>
+                    <p>Today, we've streamlined the entire process, building strong relationships with international suppliers, customs officials, and insurance providers to deliver a seamless experience for our clients.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Story">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="values">
+    <!-- About Intro -->
+    <section class="about-intro">
         <div class="container">
-            <div class="values-container">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Transparency</h3>
-                    <p>Clear communication and honest pricing throughout the import process with no hidden fees</p>
+            <h2>ABOUT US</h2>
+            <p>We are Fsmaky Global Pvt Ltd, a trusted vehicle importation and registration company based in Zimbabwe. Our mission is to make the process of owning a car from overseas simple, transparent, and stress free for every client.</p>
+            <a href="contact.html" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="what-we-do">
+        <div class="container">
+            <div class="what-we-do-content">
+                <div class="what-we-do-image">
+                    <img src="https://images.unsplash.com/photo-1563720223485-40d6d88bd5c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="What We Do">
                 </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Reliability</h3>
-                    <p>Consistent, dependable service you can count on with proven track record of successful imports</p>
+                <div class="what-we-do-text">
+                    <h2>WHAT WE DO</h2>
+                    <p>We assist individuals and businesses with vehicle purchasing, importation, clearance, registration, and insurance coordination. From finding the right vehicle to handling paperwork and delivery, we provide step-by-step guidance and reliable support throughout the journey.</p>
+                    <p>Our comprehensive services cover every aspect of vehicle ownership, ensuring our clients can focus on enjoying their new vehicle while we handle the complexities of importation and registration.</p>
+                    <a href="services.html" class="btn">Our Services</a>
                 </div>
-                <div class="value-card">
-                    <div class="value-icon">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">WHY CHOOSE US</h2>
+            <div class="why-choose-us-container">
+                <div class="reason-card">
+                    <div class="reason-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Honesty</h3>
-                    <p>Ethical business practices with your best interests in mind, ensuring complete satisfaction</p>
+                    <h3>HONESTY</h3>
+                    <p>We believe in full transparency, no hidden costs, no unclear processes. From quotation to delivery, every step is communicated clearly so you always know what to expect.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>RELIABLE</h3>
+                    <p>You can count on us to handle your vehicle importation efficiently and on time. Our team ensures all documents, clearances, and logistics are managed professionally for a smooth experience.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>STRONG PARTNER NETWORK</h3>
+                    <p>We work closely with verified international suppliers, clearing agents, and insurance companies. This network allows us to deliver quality vehicles, secure transactions, and faster turnaround times.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- Mission Vision Values -->
+    <section class="mission-vision">
         <div class="container">
-            <h2 class="section-title">COMPANY OVERVIEW</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Fsmaky Global Pvt Ltd is a premier vehicle importation, registration, and logistics service provider dedicated to helping individuals and businesses import, clear, register, insure, and maintain vehicles with absolute ease.</p>
-                    <p>We simplify the entire process from selecting a car that fits your budget to handling customs, licensing, and insurance, ensuring our clients enjoy a smooth and transparent experience from start to finish.</p>
-                    <p>Our team partners with trusted suppliers, insurance companies, and clearance agents to guarantee reliability, authenticity, and competitive pricing. Whether you're buying your first car or managing a fleet, we provide step-by-step support and expert guidance every step of the way.</p>
-                    <a href="#" class="btn" style="margin-top: 20px;">Learn More About Us</a>
+            <h2 class="section-title">OUR GUIDING PRINCIPLES</h2>
+            <div class="mvv-container">
+                <div class="mvv-card">
+                    <div class="mvv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>OUR VISION</h3>
+                    <p>To be a global player in comprehensive vehicle import, processing, maintenance and management, setting the standard for excellence in the automotive industry.</p>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vehicle Importation Process">
+                <div class="mvv-card">
+                    <div class="mvv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>OUR MISSION</h3>
+                    <p>To make the process of owning a car from overseas simple, transparent, and stress free for every client through exceptional service and unwavering commitment to quality.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem;">At Fsmaky Global Pvt Ltd, we handle every step of the vehicle ownership process with professionalism, transparency, and care. Whether you're importing, clearing, or registering your vehicle, we've got you covered.</p>
-
-            <div class="services-container">
-                <!-- Vehicle Importation -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vehicle Importation">
+                <div class="mvv-card">
+                    <div class="mvv-icon">
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Vehicle Importation</h3>
-                        <p>We help clients source vehicles from trusted suppliers worldwide. Our team manages quotations, pre-shipment inspections, and delivery logistics ensuring every import meets Zimbabwean standards and arrives safely.</p>
-                        <ul>
-                            <li>Supplier verification</li>
-                            <li>Cost estimates and import guidance</li>
-                            <li>Tracking and updates until delivery</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Vehicle Clearance -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Customs Clearance">
-                    </div>
-                    <div class="service-content">
-                        <h3>Vehicle Clearance</h3>
-                        <p>We handle all customs paperwork and procedures to make sure your vehicle is cleared quickly and efficiently, navigating ZIMRA requirements with expertise.</p>
-                        <ul>
-                            <li>ZIMRA documentation</li>
-                            <li>Duty calculation support</li>
-                            <li>Port clearance and logistics coordination</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Vehicle Registration -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=8" alt="Vehicle Registration">
-                    </div>
-                    <div class="service-content">
-                        <h3>Vehicle Registration</h3>
-                        <p>Get your vehicle fully licensed and road-ready without the hassle. We take care of all the registration steps to ensure compliance and peace of mind.</p>
-                        <ul>
-                            <li>Number plate registration</li>
-                            <li>Licensing and ownership documents</li>
-                            <li>Roadworthy compliance assistance</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Vehicle Insurance -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vehicle Insurance">
-                    </div>
-                    <div class="service-content">
-                        <h3>Vehicle Insurance</h3>
-                        <p>We connect clients with reputable insurance providers offering competitive premiums and reliable cover, ensuring your investment is protected.</p>
-                        <ul>
-                            <li>Third-party and comprehensive cover options</li>
-                            <li>Assistance with claims and renewals</li>
-                            <li>Partnership with top insurance companies</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Vehicle Maintenance -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vehicle Maintenance">
-                    </div>
-                    <div class="service-content">
-                        <h3>Vehicle Maintenance Assistance</h3>
-                        <p>We help clients find trusted mechanics and service centres for regular maintenance or repairs, ensuring your vehicle stays in optimal condition.</p>
-                        <ul>
-                            <li>Workshop referrals</li>
-                            <li>Maintenance scheduling reminders</li>
-                            <li>Quality assurance and parts sourcing support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">TESTIMONIALS</h2>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Exceptional service delivery. I was very happy with how they handled my vehicle import from Japan. They delivered on time and kept me informed throughout the process.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">TM</div>
-                        <div class="author-info">
-                            <h4>Tinotenda Musanhi</h4>
-                            <p>Imported Toyota Harrier</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        The team at Fsmaky Global are true professionals who work with precision and timeliness. They delivered my car without a single scratch - the process was incredibly smooth. I encourage everyone to deal with Fsmaky Global.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RN</div>
-                        <div class="author-info">
-                            <h4>Rejoice Ngwere</h4>
-                            <p>Imported Honda Fit</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        I'm absolutely thrilled with the service. My car arrived safely in Zimbabwe from Japan, and the entire process was handled professionally. The customs clearance was surprisingly quick!
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">KM</div>
-                        <div class="author-info">
-                            <h4>Keith Mapesa</h4>
-                            <p>Imported Nissan X-Trail</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        As a first-time importer, I was nervous about the process, but Fsmaky Global made it so simple. My car arrived in perfect condition, and their guidance through registration was invaluable.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">NM</div>
-                        <div class="author-info">
-                            <h4>Nolwazi Moyo</h4>
-                            <p>Imported Mazda Demio</p>
-                        </div>
-                    </div>
+                    <h3>OUR VALUES</h3>
+                    <ul class="values-list">
+                        <li>Honesty in all dealings</li>
+                        <li>Transparency throughout the process</li>
+                        <li>Reliability you can count on</li>
+                        <li>Customer-centric approach</li>
+                        <li>Continuous improvement</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -924,9 +1198,9 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Import Your Dream Car?</h2>
-            <p>Let us handle the complex process while you focus on the excitement of your new vehicle. Contact us today for a free consultation and personalized quote.</p>
-            <a href="#" class="btn">Get Started Today</a>
+            <h2>Ready to Start Your Vehicle Import Journey?</h2>
+            <p>Join hundreds of satisfied customers who have trusted Fsmaky Global with their vehicle importation needs.</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
         </div>
     </section>
 
@@ -948,22 +1222,22 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="About.html">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">How to Purchase</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="how-to-purchase.html">How to Purchase</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="#">Vehicle Importation</a></li>
-                        <li><a href="#">Vehicle Clearance</a></li>
-                        <li><a href="#">Vehicle Registration</a></li>
-                        <li><a href="#">Vehicle Insurance</a></li>
-                        <li><a href="#">Maintenance Assistance</a></li>
+                        <li><a href="services.html">Vehicle Importation</a></li>
+                        <li><a href="services.html">Vehicle Clearance</a></li>
+                        <li><a href="services.html">Vehicle Registration</a></li>
+                        <li><a href="services.html">Vehicle Insurance</a></li>
+                        <li><a href="services.html">Maintenance Assistance</a></li>
                     </ul>
                 </div>
 
@@ -1009,6 +1283,16 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Simple animation for decorative elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const decorations = document.querySelectorAll('.decoration');
+
+            decorations.forEach((decoration, index) => {
+                // Stagger the animation delays
+                decoration.style.animationDelay = `${index * 0.5}s`;
+            });
         });
     </script>
 </body>
