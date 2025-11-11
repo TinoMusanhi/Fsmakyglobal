@@ -187,8 +187,6 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 76, 151, 0.4), rgba(0, 102, 204, 0.5)),
-                url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             background-position: center 30%;
             background-attachment: fixed;
@@ -197,6 +195,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            transition: background-image 1s ease-in-out;
         }
 
         .hero:before {
@@ -765,7 +764,7 @@
                     <a href="#" class="btn" style="margin-top: 20px;">Learn More About Us</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vehicle Importation Process">
+                    <img src="images/_DSC5938.JPG" alt="Vehicle Importation Process">
                 </div>
             </div>
         </div>
@@ -1014,23 +1013,35 @@
             }
         });
 
-        // Hero background slideshow
-    const hero = document.querySelector('.hero');
-    const images = [
-        'images/DSC5915.JPG',
-        'images/DSC5916.JPG',
-        'images/DSC5918.JPG',
-        'images/DSC5919.JPG',
-        'images/DSC5920.JPG'
-     ];    
-    let current = 0;
-    const changeBackground = () => {
-        current = (current + 1) % images.length;
-        hero.style.backgroundImage = `linear-gradient(rgba(0, 76, 151, 0.4), rgba(0, 102, 204, 0.5)), url('${images[current]}')`;
-    }
+        // Hero background slideshow with preloading
+        const hero = document.querySelector('.hero');
+        const images = [
+            'images/_DSC5915.JPG',
+            'images/_DSC5916.JPG',
+            'images/_DSC5918.JPG',
+            'images/_DSC5919.JPG',
+            'images/_DSC5920.JPG'
+        ];
 
-    // Change image every 5 seconds
-    setInterval(changeBackground, 5000);
+        // Preload images to prevent flickering
+        const preloadedImages = [];
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+            preloadedImages.push(img);
+        });
+
+        let current = 0;
+        const changeBackground = () => {
+            current = (current + 1) % images.length;
+            hero.style.backgroundImage = `linear-gradient(rgba(0, 76, 151, 0.4), rgba(0, 102, 204, 0.5)), url('${images[current]}')`;
+        }
+
+        // Set initial background
+        hero.style.backgroundImage = `linear-gradient(rgba(0, 76, 151, 0.4), rgba(0, 102, 204, 0.5)), url('${images[0]}')`;
+
+        // Change image every 5 seconds
+        setInterval(changeBackground, 5000);
     </script>
 </body>
 </html>
