@@ -703,7 +703,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">How to Purchase</a></li>
                     <li><a href="#">Contact</a></li>
@@ -950,6 +950,7 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">How to Purchase</a></li>
                         <li><a href="#">Contact</a></li>
@@ -1012,6 +1013,24 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Hero background slideshow
+    const hero = document.querySelector('.hero');
+    const images = [
+        'images/DSC5915.JPG',
+        'images/DSC5916.JPG',
+        'images/DSC5918.JPG',
+        'images/DSC5919.JPG',
+        'images/DSC5920.JPG'
+     ];    
+    let current = 0;
+    const changeBackground = () => {
+        current = (current + 1) % images.length;
+        hero.style.backgroundImage = `linear-gradient(rgba(0, 76, 151, 0.4), rgba(0, 102, 204, 0.5)), url('${images[current]}')`;
+    }
+
+    // Change image every 5 seconds
+    setInterval(changeBackground, 5000);
     </script>
 </body>
 </html>
