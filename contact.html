@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fsmaky Global</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse homepage styles */
+        :root {
+            --primary-blue: #0066CC;
+            --dark-blue: #004C97;
+            --light-blue: #E6F2FF;
+            --accent-gold: #D4AF37;
+            --dark-gray: #222222;
+            --medium-gray: #555555;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Open Sans', sans-serif; color:var(--dark-gray); background-color:var(--white); }
+        h1,h2,h3,h4,h5 { font-family:'Poppins', sans-serif; font-weight:600; line-height:1.3; margin-bottom:1rem; }
+        .container { width:100%; max-width:1200px; margin:0 auto; padding:0 20px; }
+        .btn { display:inline-block; padding:14px 32px; background-color:var(--primary-blue); color:var(--white); border:none; border-radius:6px; font-weight:600; text-decoration:none; cursor:pointer; transition:all 0.3s ease; font-size:1rem; }
+        .btn:hover { background-color:var(--dark-blue); transform:translateY(-3px); }
+        header { background-color:var(--white); box-shadow:0 2px 15px rgba(0,0,0,0.1); position:fixed; width:100%; top:0; z-index:1000; }
+        header.scrolled { padding:5px 0; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+        .header-container { display:flex; justify-content:space-between; align-items:center; padding:15px 20px; }
+        .logo { display:flex; align-items:center; }
+        .logo-text { font-size:26px; font-weight:700; color:var(--primary-blue); letter-spacing:-0.5px; }
+        .logo-text span { color:var(--dark-blue); }
+        nav ul { display:flex; list-style:none; }
+        nav ul li { margin-left:30px; position:relative; }
+        nav ul li a { text-decoration:none; color:var(--dark-gray); font-weight:500; transition:color 0.3s ease; font-size:15px; }
+        nav ul li a:hover { color:var(--primary-blue); }
+        nav ul li a:after { content:''; position:absolute; bottom:-5px; left:0; width:0; height:2px; background-color:var(--primary-blue); transition:width 0.3s ease; }
+        nav ul li a:hover:after { width:100%; }
+        .mobile-menu-btn { display:none; background:none; border:none; font-size:24px; color:var(--dark-gray); cursor:pointer; }
+
+        /* Contact Page Styles */
+        section { padding:100px 0; }
+        .section-title { text-align:center; margin-bottom:50px; position:relative; }
+        .section-title:after { content:''; position:absolute; bottom:-15px; left:50%; transform:translateX(-50%); width:80px; height:3px; background-color:var(--primary-blue); }
+
+        .contact-container { display:flex; flex-wrap:wrap; gap:40px; }
+        .contact-form, .contact-info { flex:1; min-width:300px; background-color:var(--light-gray); padding:40px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+        .contact-form h3, .contact-info h3 { margin-bottom:25px; color:var(--dark-blue); }
+        .contact-form input, .contact-form textarea { width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; border-radius:6px; font-size:1rem; }
+        .contact-form textarea { resize:none; min-height:150px; }
+        .contact-info ul { list-style:none; }
+        .contact-info ul li { margin-bottom:15px; display:flex; align-items:center; gap:10px; font-size:1rem; }
+        .contact-info ul li i { color:var(--primary-blue); }
+
+        .map-container { margin-top:40px; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); }
+
+        /* Responsive */
+        @media(max-width:768px){ .contact-container{ flex-direction:column; } }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo"><div class="logo-text">Fsmaky<span>Global</span></div></div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">How to Purchase</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +263 715 360 986</li>
+                        <li><i class="fas fa-envelope"></i> fsmaky@global.co.zw</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 307 Regal Star House No. 25 George Silundika Ave, Harare</li>
+                        <li><i class="fas fa-clock"></i> Mon - Fri: 8AM - 5PM</li>
+                    </ul>
+
+                    <!-- Google Map -->
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.029488746313!2d31.05880207531067!3d-17.822385988500062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19328bfb9f78a91b%3A0x8a0a1d69b70edcf4!2sRegal%20Star%20House!5e0!3m2!1sen!2szw!4v1700367836403!5m2!1sen!2szw" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Fsmaky Global</h3>
+                    <p>Your reliable partner in vehicle importation, registration, and logistics services. We make vehicle ownership accessible and hassle-free.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #cccccc; font-size: 18px;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">How to Purchase</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Vehicle Importation</a></li>
+                        <li><a href="#">Vehicle Clearance</a></li>
+                        <li><a href="#">Vehicle Registration</a></li>
+                        <li><a href="#">Vehicle Insurance</a></li>
+                        <li><a href="#">Maintenance Assistance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fsmaky Global Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50){ header.classList.add('scrolled'); }
+            else{ header.classList.remove('scrolled'); }
+        });
+    </script>
+</body>
+</html>
