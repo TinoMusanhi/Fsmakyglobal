@@ -764,7 +764,8 @@
                     <a href="#" class="btn" style="margin-top: 20px;">Learn More About Us</a>
                 </div>
                 <div class="about-image">
-                    <img src="images/_DSC5938.JPG" alt="Vehicle Importation Process">
+                    <!-- FIXED: Using absolute path for GitHub Pages -->
+                    <img src="./images/_DSC5938.JPG" alt="Vehicle Importation Process">
                 </div>
             </div>
         </div>
@@ -812,7 +813,7 @@
                 <!-- Vehicle Registration -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=8" alt="Vehicle Registration">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vehicle Registration">
                     </div>
                     <div class="service-content">
                         <h3>Vehicle Registration</h3>
@@ -972,9 +973,7 @@
                     <ul>
                         <li><a href="tel:+263715360986"><i class="fas fa-phone"></i> +263 715 360 986</a></li>
                         <li><a href="mailto:fsmaky@global.co.zw"><i class="fas fa-envelope"></i> fsmaky@global.co.zw</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 307 Regal Star House No. 25 George Silundika Ave
-
-                        Harare</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 307 Regal Star House No. 25 George Silundika Ave Harare</a></li>
                         <li><a href="#"><i class="fas fa-clock"></i> Mon - Fri: 8AM - 5PM</a></li>
                     </ul>
                 </div>
@@ -1013,14 +1012,14 @@
             }
         });
 
-        // Hero background slideshow with preloading
+        // Hero background slideshow with preloading - FIXED PATHS
         const hero = document.querySelector('.hero');
         const images = [
-            'images/_DSC5915.JPG',
-            'images/_DSC5916.JPG',
-            'images/_DSC5918.JPG',
-            'images/_DSC5919.JPG',
-            'images/_DSC5920.JPG'
+            './images/_DSC5915.JPG',
+            './images/_DSC5916.JPG',
+            './images/_DSC5918.JPG',
+            './images/_DSC5919.JPG',
+            './images/_DSC5920.JPG'
         ];
 
         // Preload images to prevent flickering
