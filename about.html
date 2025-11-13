@@ -345,6 +345,66 @@
             transform: scale(1.05);
         }
 
+          /* Meet the Team Section */
+.team {
+    background-color: var(--light-gray);
+}
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.team-member {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.team-member h3 {
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+}
+.team-member .position {
+    color: var(--medium-gray);
+    font-size: 0.95rem;
+}
+
+/* Partners Section */
+.partners {
+    background: var(--white);
+    border-top: 5px solid var(--primary-blue);
+}
+.partners-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 40px;
+}
+.partner-logo img {
+    max-width: 160px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+.partner-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
         /* Services Section */
         .services {
             background-color: var(--light-gray);
@@ -1109,6 +1169,60 @@
             <h2>ABOUT US</h2>
             <p>We are Fsmaky Global Pvt Ltd, a trusted vehicle importation and registration company based in Zimbabwe. Our mission is to make the process of owning a car from overseas simple, transparent, and stress free for every client.</p>
             <a href="contact.html" class="btn">Get In Touch</a>
+        </div>
+    </section>
+              <!-- Meet the Team -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">MEET THE TEAM</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300" alt="Prince Farai Stanley Makanga">
+                    <h3>Prince Farai Stanley Makanga</h3>
+                    <p class="position">Director</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300" alt="Panashe Mpofu">
+                    <h3>Panashe Mpofu</h3>
+                    <p class="position">Accountant</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300" alt="Admire Maxwell Makanga">
+                    <h3>Admire Maxwell Makanga</h3>
+                    <p class="position">Head of Clearing & Collection</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300" alt="McWsh Tawanda Mapesa">
+                    <h3>McWsh Tawanda Mapesa</h3>
+                    <p class="position">Driver</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300" alt="Keith Mapesa Mandaza">
+                    <h3>Keith Mapesa Mandaza</h3>
+                    <p class="position">Driver</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Partners -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">OUR PARTNERS</h2>
+            <div class="partners-container">
+                <a href="https://www.paypal.com" target="_blank" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
+                </a>
+                <a href="https://www.beforward.jp/" target="_blank" class="partner-logo">
+                    <img src="https://www.beforward.jp/img/common/beforward-logo.png" alt="Beforward Logo">
+                </a>
+                <a href="https://www.sbtjapan.com/" target="_blank" class="partner-logo">
+                    <img src="https://www.sbtjapan.com/img/logo.png" alt="SBT Japan Logo">
+                </a>
+                <a href="https://www.cbz.co.zw/insurance" target="_blank" class="partner-logo">
+                    <img src="https://www.cbz.co.zw/images/logo.png" alt="CBZ Insurance Logo">
+                </a>
+            </div>
         </div>
     </section>
 
