@@ -1,198 +1,743 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Purchase - Fsmaky Global</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-blue: #0066CC;
-      --dark-blue: #004C97;
-      --light-gray: #f8f9fa;
-      --white: #ffffff;
-      --dark-gray: #222;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Fsmaky Global | Vehicle Importation Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+       /* Base Styles */
+        :root {
+            --primary-blue: #0066CC;
+            --dark-blue: #004C97;
+            --light-blue: #E6F2FF;
+            --accent-gold: #D4AF37;
+            --dark-gray: #222222;
+            --medium-gray: #555555;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Open Sans', sans-serif; color: var(--dark-gray); background-color: var(--white); }
-    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      background-color: var(--white);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-    .header-container {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 20px;
-    }
-    .logo-text {
-      font-size: 26px; font-weight: 700; color: var(--primary-blue);
-    }
-    .logo-text span { color: var(--dark-blue); }
-    nav ul {
-      display: flex; list-style: none;
-    }
-    nav ul li { margin-left: 30px; }
-    nav ul li a {
-      text-decoration: none; color: var(--dark-gray); font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover { color: var(--primary-blue); }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
 
-    /* Hero Section */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 102, 204, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--dark-blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+    /* HERO SECTION (reuse same style) */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg') center/cover no-repeat;
-      height: 60vh;
-      display: flex; justify-content: center; align-items: center;
-      color: var(--white);
-      text-align: center;
-      margin-top: 70px;
-    }
-    .hero h1 { font-size: 42px; }
-
-    /* Steps Section */
-    .steps {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    .steps h2 {
-      text-align: center; margin-bottom: 40px; color: var(--dark-blue);
-    }
-    .step {
-      margin-bottom: 30px;
-      background-color: var(--light-gray);
-      padding: 20px 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .step h3 {
-      color: var(--primary-blue);
-      margin-bottom: 10px;
+        background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+        color: var(--white);
+        text-align: center;
+        padding: 180px 0 120px;
+        position: relative;
     }
 
-    /* Footer */
-    footer {
-      background-color: #111;
-      color: #ccc;
-      padding: 40px 20px;
-      margin-top: 60px;
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(0, 76, 151, 0.8), rgba(0, 102, 204, 0.6));
+        z-index: 0;
     }
-    .footer-container {
-      display: flex; flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-    }
-    .footer-col h3 { color: var(--white); margin-bottom: 15px; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li a { color: #ccc; text-decoration: none; line-height: 1.8; }
-    .footer-bottom { text-align: center; margin-top: 20px; border-top: 1px solid #333; padding-top: 10px; }
 
-    @media(max-width:768px) {
-      .footer-container { flex-direction: column; }
+    .hero .container {
+        position: relative;
+        z-index: 1;
     }
-  </style>
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+    }
+
+    /* HOW TO PURCHASE SECTION */
+    .purchase-steps {
+        position: relative;
+        background: url('https://images.unsplash.com/photo-1551135049-8a33b42738b4?auto=format&fit=crop&w=2070&q=80') center/cover fixed;
+    }
+
+    .purchase-steps::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(15, 58, 98, 0.9) 0%, rgba(26, 95, 158, 0.85) 100%);
+        z-index: 0;
+    }
+
+    .purchase-steps .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .purchase-steps .section-title h2 {
+        color: var(--white);
+    }
+
+    .purchase-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .purchase-timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 30px;
+        height: 100%;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--accent-gold), var(--primary-blue));
+    }
+
+    .purchase-step {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--accent-gold), var(--primary-blue));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-weight: 700;
+        font-size: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .step-details {
+        flex-grow: 1;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 16px;
+        padding: 24px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .step-details:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateX(10px);
+    }
+
+    .step-details h3 {
+        color: var(--white);
+        margin-bottom: 10px;
+    }
+
+    .step-details p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.7;
+    }
+     /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 76, 151, 0.9)), url('https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.8) 0%, rgba(0, 76, 151, 0.9) 100%);
+            z-index: -1;
+        }
+
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: #bbbbbb;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444444;
+            color: #999999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .about-content, .story-content, .what-we-do-content {
+                flex-direction: column;
+            }
+
+            .about-image, .story-image, .what-we-do-image {
+                margin-top: 30px;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                padding: 20px;
+            }
+
+            nav.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+
+            .page-header {
+                background-attachment: scroll;
+            }
+
+            .decoration {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .value-card, .service-card {
+                min-width: 100%;
+            }
+
+            .page-header h1 {
+                font-size: 1.9rem;
+            }
+
+            .breadcrumb {
+                flex-direction: column;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .breadcrumb li {
+                margin: 5px 0;
+            }
+
+            .breadcrumb li:after {
+                display: none;
+            }
+        }
+</style>
 </head>
-
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-container container">
-      <div class="logo"><div class="logo-text">Fsmaky<span>Global</span></div></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="how-to-purchase.html">How to Purchase</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <div class="logo-text">Fsmaky<span>Global</span></div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="how-to-purchase.html">How to Purchase</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+<section class="hero">
+  <div class="container">
+    <h1>How to Purchase with Us</h1>
+    <p>Follow our simple process to get your dream vehicle imported smoothly and securely.</p>
+  </div>
+</section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Get in Touch With Us — How to Purchase</h1>
-  </section>
-
-  <!-- Steps -->
-  <section class="steps">
-    <h2>Step-by-Step Purchase Guide</h2>
-
-    <div class="step">
-      <h3>1️⃣ Vehicle Selection</h3>
-      <p>Start by choosing your preferred vehicle from our trusted partners like <b>Beforward</b> or <b>SBT Japan</b>, or from our exclusive WhatsApp group (join here 👉 [insert link]).</p>
-    </div>
-
-    <div class="step">
-      <h3>2️⃣ Reserve Your Car</h3>
-      <p>Once you’ve found your ideal car, provide your <b>Full Name</b>, <b>Place of Residence</b>, and <b>Phone Number</b>. Our team will confirm availability and start the booking.</p>
-    </div>
-
-    <div class="step">
-      <h3>3️⃣ Receive Your Proforma Invoice</h3>
-      <p>You’ll get a proforma invoice with vehicle details, price, and payment info.</p>
+<!-- STEP-BY-STEP SECTION -->
+<section class="purchase-steps">
+  <div class="container">
+    <div class="section-title">
+      <h2>Step-by-Step Guide</h2>
     </div>
 
-    <div class="step">
-      <h3>4️⃣ Make Your Payment</h3>
-      <p>Pay via <b>Cash at our office</b>, <b>Bank Transfer</b>, or <b>ZANACO Bank</b>.</p>
-    </div>
-
-    <div class="step">
-      <h3>5️⃣ Vehicle Inspection</h3>
-      <p>Your vehicle is inspected in Japan or Singapore for safety and quality.</p>
-    </div>
-
-    <div class="step">
-      <h3>6️⃣ Shipping & Transit</h3>
-      <p>Cars are shipped to Dar es Salaam (around 8 weeks depending on the schedule).</p>
-    </div>
-
-    <div class="step">
-      <h3>7️⃣ Pre-clearance & Customs</h3>
-      <p>We handle pre-clearance in Dar es Salaam, Tunduma, and Chirundu.</p>
-    </div>
-
-    <div class="step">
-      <h3>8️⃣ Insurance & Plates</h3>
-      <p>We assist with ZINARA or CBZ insurance and temporary plates valid for 14 days.</p>
-    </div>
-
-    <div class="step">
-      <h3>9️⃣ Nationwide Delivery</h3>
-      <p>Once cleared, we deliver your car anywhere in Zimbabwe, ready for the road.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h3>Fsmaky Global</h3>
-        <p>Your reliable partner in vehicle importation, registration, and logistics services.</p>
+    <div class="purchase-timeline">
+      
+      <div class="purchase-step">
+        <div class="step-number">1</div>
+        <div class="step-details">
+          <h3>Vehicle Selection</h3>
+          <p>Start by choosing your preferred vehicle from our trusted partners like <strong>Beforward</strong> or <strong>SBT Japan</strong>, or from our exclusive WhatsApp group (join here 👉 <a href="#" style="color: var(--accent-gold); text-decoration: underline;">click to join</a>).</p>
+        </div>
       </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="how-to-purchase.html">How to Purchase</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+
+      <div class="purchase-step">
+        <div class="step-number">2</div>
+        <div class="step-details">
+          <h3>Reserve Your Car</h3>
+          <p>Once you’ve found your ideal car, provide your <strong>Full Name</strong>, <strong>Place of Residence</strong>, and <strong>Phone Number</strong>. Our team will confirm availability and start the booking process.</p>
+        </div>
       </div>
+
+      <div class="purchase-step">
+        <div class="step-number">3</div>
+        <div class="step-details">
+          <h3>Receive Your Proforma Invoice</h3>
+          <p>We’ll send you a <strong>Proforma Invoice</strong> with vehicle details, total cost, and payment instructions.</p>
+        </div>
+      </div>
+
+      <div class="purchase-step">
+        <div class="step-number">4</div>
+        <div class="step-details">
+          <h3>Make Your Payment</h3>
+          <p>Pay conveniently via <strong>Cash</strong> at our office, <strong>Bank Transfer</strong>, or <strong>ZANACO Bank</strong>.</p>
+        </div>
+      </div>
+
+      <div class="purchase-step">
+        <div class="step-number">5</div>
+        <div class="step-details">
+          <h3>Vehicle Inspection</h3>
+          <p>Your vehicle undergoes a thorough inspection in <strong>Japan</strong> or <strong>Singapore</strong> to ensure safety and quality before shipping.</p>
+        </div>
+      </div>
+
+      <div class="purchase-step">
+        <div class="step-number">6</div>
+        <div class="step-details">
+          <h3>Shipping & Transit</h3>
+          <p>Vehicles are shipped to <strong>Dar es Salaam</strong> — transit usually takes about <strong>8 weeks</strong> depending on schedules.</p>
+        </div>
+      </div>
+
+      <div class="purchase-step">
+        <div class="step-number">7</div>
+        <div class="step-details">
+          <h3>Pre-clearance & Customs</h3>
+          <p>We manage <strong>pre-clearance</strong> at key points including <strong>Dar es Salaam</strong>, <strong>Tunduma</strong>, and <strong>Chirundu</strong> to fast-track your vehicle’s arrival.</p>
+        </div>
+      </div>
+
+      <div class="purchase-step">
+        <div class="step-number">8</div>
+        <div class="step-details">
+          <h3>Insurance & Plates</h3>
+          <p>We assist with <strong>ZINARA</strong> or <strong>CBZ Insurance</strong> and provide <strong>temporary number plates</strong> valid for up to 14 days.</p>
+        </div>
+      </div>
+
+      <div class="purchase-step">
+        <div class="step-number">9</div>
+        <div class="step-details">
+          <h3>Nationwide Delivery</h3>
+          <p>Once cleared, your vehicle is <strong>delivered anywhere in Zimbabwe</strong> — road-ready and fully documented.</p>
+        </div>
+      </div>
+
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Fsmaky Global Pvt Ltd. All Rights Reserved.</p>
-    </div>
-  </footer>
-</body>
-</html>
+  </div>
+</section>
+
+<!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Vehicle Import Journey?</h2>
+            <p>Join hundreds of satisfied customers who have trusted Fsmaky Global with their vehicle importation needs.</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Fsmaky Global</h3>
+                    <p>Your reliable partner in vehicle importation, registration, and logistics services. We make vehicle ownership accessible and hassle-free.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #cccccc; font-size: 18px;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="how-to-purchase.html">How to Purchase</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Vehicle Importation</a></li>
+                        <li><a href="services.html">Vehicle Clearance</a></li>
+                        <li><a href="services.html">Vehicle Registration</a></li>
+                        <li><a href="services.html">Vehicle Insurance</a></li>
+                        <li><a href="services.html">Maintenance Assistance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="tel:+263715360986"><i class="fas fa-phone"></i> +263 715 360 986</a></li>
+                        <li><a href="mailto:fsmaky@global.co.zw"><i class="fas fa-envelope"></i> fsmaky@global.co.zw</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 307 Regal Star House No. 25 George Silundika Ave
+
+                        Harare</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon - Fri: 8AM - 5PM</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fsmaky Global Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Simple animation for decorative elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const decorations = document.querySelectorAll('.decoration');
+
+            decorations.forEach((decoration, index) => {
+                // Stagger the animation delays
+                decoration.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
+
