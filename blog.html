@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fsmaky Global - Your Reliable Vehicle Importation Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-blue: #0066CC;
+            --dark-blue: #004C97;
+            --light-blue: #E6F2FF;
+            --accent-gold: #D4AF37;
+            --dark-gray: #222222;
+            --medium-gray: #555555;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 102, 204, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--dark-blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+
+       /* Blog Hero Section */
+   .blog-hero {
+        background: linear-gradient(rgba(0, 76, 151, 0.8), rgba(0, 102, 204, 0.9)), 
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: var(--white);
+        text-align: center;
+        padding: 180px 20px 120px;
+        position: relative;
+    }
+
+    .blog-hero h1 {
+        font-size: 3rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .blog-hero p {
+       font-size: 1.2rem;
+       max-width: 750px;
+       margin: 0 auto;
+       opacity: 0.9;
+    }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        /* Blog Articles Section */
+.blog-section {
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f0f7ff 100%);
+    position: relative;
+    padding: 100px 0;
+}
+
+.blog-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 30px 20px;
+}
+
+.blog-content h3 {
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.blog-content p {
+    color: var(--medium-gray);
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.blog-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--primary-blue);
+    color: var(--white);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.blog-btn:hover {
+    background: var(--dark-blue);
+    transform: translateY(-4px);
+}
+
+/* Popup Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: var(--medium-gray);
+    line-height: 1.7;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    color: var(--dark-gray);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--primary-blue);
+}
+/* Page Header */
+        .page-header {
+    background:
+        linear-gradient(135deg, rgba(25, 25, 112, 0.6) 0%, rgba(70, 130, 180, 0.5) 100%),
+        url('images/_DSC5942.JPG');
+    background-size: cover;
+    background-position: center 65%;
+    background-attachment: fixed;
+    color: var(--white);
+    padding: 180px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+        .page-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .page-header h1:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 40px auto 50px;
+            font-weight: 300;
+            line-height: 1.7;
+            opacity: 0.95;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .breadcrumb {
+            display: inline-flex;
+            justify-content: center;
+            list-style: none;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 12px 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .breadcrumb li {
+            margin: 0 8px;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .breadcrumb li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .breadcrumb li a:hover {
+            color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .breadcrumb li:after {
+            content: '›';
+            margin-left: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+        }
+
+        .breadcrumb li:last-child:after {
+            content: '';
+        }
+
+        .decoration {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .decoration.circle-1 {
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: 15%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decoration.circle-2 {
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            bottom: 20%;
+            right: 12%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .decoration.line {
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+            top: 30%;
+            right: 20%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 76, 151, 0.9)), url('https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.8) 0%, rgba(0, 76, 151, 0.9) 100%);
+            z-index: -1;
+        }
+
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: #bbbbbb;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444444;
+            color: #999999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .about-content, .story-content, .what-we-do-content {
+                flex-direction: column;
+            }
+
+            .about-image, .story-image, .what-we-do-image {
+                margin-top: 30px;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                padding: 20px;
+            }
+
+            nav.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+
+            .page-header {
+                background-attachment: scroll;
+            }
+
+            .decoration {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .value-card, .service-card {
+                min-width: 100%;
+            }
+
+            .page-header h1 {
+                font-size: 1.9rem;
+            }
+
+            .breadcrumb {
+                flex-direction: column;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .breadcrumb li {
+                margin: 5px 0;
+            }
+
+            .breadcrumb li:after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <div class="logo-text">Fsmaky<span>Global</span></div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="how-to-purchase.html">How to Purchase</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <!-- Decorative Elements -->
+        <div class="decoration circle-1"></div>
+        <div class="decoration circle-2"></div>
+        <div class="decoration line"></div>
+
+        <div class="container">
+            <h1>OUR STORY</h1>
+            <p>At Fsmaky Global, we're more than just importers - we're your trusted partners in making vehicle ownership accessible, transparent, and completely worry-free. Your journey begins with us.</p>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </section>
+
+<!-- ✅ Blog Hero Section -->
+  <section class="blog-hero">
+    <div class="container">
+      <h1>Insights & Tips for Smart Car Buyers</h1>
+      <p>Stay informed with expert advice on car imports, insurance, and budgeting — all tailored for Zimbabwean drivers.</p>
+    </div>
+  </section>
+
+  <!-- ✅ Blog Section -->
+  <section class="blog-section">
+    <div class="blog-container">
+
+      <!-- Blog 1 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Duty-Free Car Imports">
+        <div class="blog-content">
+          <h3>Everything You Need to Know on Duty-Free Car Imports in Zimbabwe</h3>
+          <p>Understand the eligibility, process, and benefits of duty-free vehicle importation for returning residents and special groups.</p>
+          <a href="#" class="blog-btn" onclick="openModal('modal1')">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog 2 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1605559424843-9e4c7d8d9c02?auto=format&fit=crop&w=800&q=80" alt="Comprehensive Insurance">
+        <div class="blog-content">
+          <h3>Why Comprehensive Insurance is Worth It for Imported Cars</h3>
+          <p>Discover why investing in full insurance coverage can save you from costly repairs and financial loss after importing a car.</p>
+          <a href="#" class="blog-btn" onclick="openModal('modal2')">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Car Budget Guide">
+        <div class="blog-content">
+          <h3>How to Choose the Best Car for Your Budget in Zimbabwe</h3>
+          <p>Learn how to select reliable, affordable cars that match your income, lifestyle, and maintenance expectations.</p>
+          <a href="#" class="blog-btn" onclick="openModal('modal3')">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ✅ Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+      <h2>Everything You Need to Know on Duty-Free Car Imports in Zimbabwe</h2>
+      <p>
+        Certain individuals such as returning residents, diplomats, and government officials may qualify for duty-free vehicle importation in Zimbabwe.
+        To apply, you must provide proof of eligibility, documentation for the vehicle, and clearance from ZIMRA.
+        This process helps reduce costs and encourages compliant importation.
+      </p>
+    </div>
+  </div>
+
+  <!-- ✅ Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+      <h2>Why Comprehensive Insurance is Worth It for Imported Cars</h2>
+      <p>
+        Comprehensive insurance protects your vehicle against theft, fire, accidents, and natural damage. 
+        It’s especially important for imported cars due to limited parts availability and higher repair costs.
+        Investing in coverage ensures peace of mind and financial security in case of unforeseen events.
+      </p>
+    </div>
+  </div>
+
+  <!-- ✅ Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+      <h2>How to Choose the Best Car for Your Budget in Zimbabwe</h2>
+      <p>
+        When buying a car, consider both the purchase price and long-term maintenance costs.
+        Focus on reliable brands like Toyota, Honda, or Nissan for better resale value and easy access to parts.
+        Always include insurance, registration, and duty in your total budget estimate.
+      </p>
+    </div>
+  </div>
+  <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Vehicle Import Journey?</h2>
+            <p>Join hundreds of satisfied customers who have trusted Fsmaky Global with their vehicle importation needs.</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Fsmaky Global</h3>
+                    <p>Your reliable partner in vehicle importation, registration, and logistics services. We make vehicle ownership accessible and hassle-free.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #cccccc; margin-right: 15px; font-size: 18px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #cccccc; font-size: 18px;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="how-to-purchase.html">How to Purchase</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Vehicle Importation</a></li>
+                        <li><a href="services.html">Vehicle Clearance</a></li>
+                        <li><a href="services.html">Vehicle Registration</a></li>
+                        <li><a href="services.html">Vehicle Insurance</a></li>
+                        <li><a href="services.html">Maintenance Assistance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="tel:+263715360986"><i class="fas fa-phone"></i> +263 715 360 986</a></li>
+                        <li><a href="mailto:fsmaky@global.co.zw"><i class="fas fa-envelope"></i> fsmaky@global.co.zw</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 307 Regal Star House No. 25 George Silundika Ave
+
+                        Harare</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon - Fri: 8AM - 5PM</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fsmaky Global Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- ✅ JavaScript for Modal Functionality -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Close modal when clicking outside content
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
