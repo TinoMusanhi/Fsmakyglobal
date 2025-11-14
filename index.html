@@ -128,11 +128,10 @@
             align-items: center;
         }
 
-        .logo-text {
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--primary-blue);
-            letter-spacing: -0.5px;
+        .logo-img {
+    height: 60px;   /* Adjust to what looks good */
+    width: auto;
+    object-fit: contain;
         }
 
         .logo-text span {
@@ -187,9 +186,9 @@
 
         /* Hero Section */
 .hero {
-    background-size: contain;           /* Reduces zoom significantly */
+    background-size: cover;           /* Reduces zoom significantly */
     background-repeat: no-repeat;
-    background-position: center top;    /* Shows more of the upper + middle part */
+    background-position: center;    /* Shows more of the upper + middle part */
     background-color: #000;             /* Fills space if image width is small */
     
     color: var(--white);
@@ -199,17 +198,11 @@
     overflow: hidden;
     transition: background-image 1s ease-in-out;
 }
-.hero {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
 
 .hero img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* Makes images fit perfectly */
+    object-fit: contain;   /* Makes images fit perfectly */
 }
 
 /* Hide all images initially */
@@ -718,8 +711,8 @@
     <header>
         <div class="header-container container">
             <div class="logo">
-                <div class="logo-text">Fsmaky<span>Global</span></div>
-            </div>
+    <img src="images/FSMAKY LOGO.png" alt="Fsmaky Global Logo" class="logo-img">
+       </div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
