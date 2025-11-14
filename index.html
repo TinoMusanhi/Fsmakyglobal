@@ -199,6 +199,27 @@
     overflow: hidden;
     transition: background-image 1s ease-in-out;
 }
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Makes images fit perfectly */
+}
+
+/* Hide all images initially */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;  /* Smooth fade effect */
+}
 
 /* Gradient overlay */
 .hero:before {
@@ -403,7 +424,7 @@
     width: 100%;
     height: 100%;            /* fill container correctly */
     object-fit: cover;
-    object-position: center bottom;  /* SHOW MIDDLE–BOTTOM AREA */
+    object-position: center;  /* SHOW MIDDLE AREA */
     transition: transform 0.5s ease;
 }
 
@@ -1048,6 +1069,25 @@ hero.style.backgroundImage =
 // Change every 5 seconds
 setInterval(changeHeroBackground, 5000);
 
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = "0";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+
+    // Show current slide
+    slides[slideIndex - 1].style.opacity = "1";
+
+    setTimeout(showSlides, 4000); // Change every 4 sec
+}
     </script>
 </body>
 </html>
