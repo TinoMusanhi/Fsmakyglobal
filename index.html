@@ -392,20 +392,21 @@
         }
 
         .service-image {
-            height: 200px;
-            overflow: hidden;
-        }
+    height: 240px; /* increased height to show more of the image */
+    overflow: hidden;
+}
 
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+.service-image img {
+    width: 100%;
+    height: 100%;            /* fill container correctly */
+    object-fit: cover;
+    object-position: center bottom;  /* SHOW MIDDLE–BOTTOM AREA */
+    transition: transform 0.5s ease;
+}
 
-        .service-card:hover .service-image img {
-            transform: scale(1.1);
-        }
+.service-card:hover .service-image img {
+    transform: scale(1.07);
+}
 
         .service-icon {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
@@ -796,7 +797,7 @@
                 <!-- Vehicle Clearance -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/_DSC5935.JPG" alt="Customs Clearance">
+                        <img src="images/5936.jpeg" alt="Customs Clearance">
                     </div>
                     <div class="service-content">
                         <h3>Vehicle Clearance</h3>
@@ -1016,8 +1017,8 @@ I’d confidently recommend them to anyone looking for a dependable vehicle impo
         // Hero background slideshow with preloading - FIXED PATHS
         const hero = document.querySelector('.hero');
         const images = [
-            'images/_DSC5936.JPG',
-            'images/_DSC5938.JPG',
+            'images/5936.jpeg',
+            'images/5938.jpeg',
             'images/_DSC5939.JPG',
             'images/_DSC5941.JPG',
             'images/_DSC5942.JPG'
