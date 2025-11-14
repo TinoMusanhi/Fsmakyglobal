@@ -26,7 +26,12 @@
         header { background-color:var(--white); box-shadow:0 2px 15px rgba(0,0,0,0.1); position:fixed; width:100%; top:0; z-index:1000; }
         header.scrolled { padding:5px 0; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
         .header-container { display:flex; justify-content:space-between; align-items:center; padding:15px 20px; }
-        .logo-text { font-size:26px; font-weight:700; color:var(--primary-blue); letter-spacing:-0.5px; }
+        .logo-text { font-size:26px; font-weight:700; color:var(--primary-blue); letter-spacing:-0.5px; } 
+        .logo-img {
+    height: 60px;   /* Adjust to what looks good */
+    width: auto;
+    object-fit: contain;
+}
         .logo-text span { color:var(--dark-blue); }
         nav ul { display:flex; list-style:none; }
         nav ul li { margin-left:30px; position:relative; }
@@ -40,7 +45,7 @@
         .page-header {
             background:
                  linear-gradient(135deg, rgba(0, 76, 151, 0.85) 0%, rgba(0, 102, 204, 0.75) 100%),
-                url('https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+                url('images/5938.jpeg');
             background-size: cover;
             background-position: center 40%;
             background-attachment: fixed;
@@ -178,6 +183,8 @@
         /* Hero Section */
         .hero {
             background-size: cover;
+            background: linear-gradient(rgba(0, 76, 151, 0.6), rgba(0, 102, 204, 0.7)),
+                        url('images/_DSC5942.JPG');
             background-position: center 30%;
             background-attachment: fixed;
             color: var(--white);
@@ -309,7 +316,10 @@
 
 <header>
     <div class="header-container container">
-        <div class="logo"><div class="logo-text">Fsmaky<span>Global</span></div></div>
+        <div class="logo">
+    <img src="images/FSMAKY LOGO.png" alt="Fsmaky Global Logo" class="logo-img">
+</div>
+
         <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         <nav>
             <ul>
@@ -318,7 +328,7 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="how-to-purchase.html">How to Purchase</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
     </div>

@@ -127,13 +127,11 @@
             display: flex;
             align-items: center;
         }
-
-        .logo-text {
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--primary-blue);
-            letter-spacing: -0.5px;
-        }
+.logo-img {
+    height: 60px;   /* Adjust to what looks good */
+    width: auto;
+    object-fit: contain;
+}
 
         .logo-text span {
             color: var(--dark-blue);
@@ -187,13 +185,13 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 76, 151, 0.6), rgba(0, 102, 204, 0.7)),
-                        url('https://images.unsplash.com/photo-1593941707882-a5bba5331f2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(0, 76, 151, 0.60), rgba(0, 102, 204, 0.60)),
+                        url('images/5936.jpeg');
             background-size: cover;
             background-position: center 30%;
             background-attachment: fixed;
             color: var(--white);
-            padding: 180px 0 120px;
+            padding: 180px 0 160px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -670,9 +668,9 @@
     <!-- Header -->
     <header>
         <div class="header-container container">
-            <div class="logo">
-                <div class="logo-text">Fsmaky<span>Global</span></div>
-            </div>
+        <div class="logo">
+    <img src="images/FSMAKY LOGO.png" alt="Fsmaky Global Logo" class="logo-img">
+</div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
