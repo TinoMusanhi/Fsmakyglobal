@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fsmaky Global - Your Reliable Vehicle Importation Partner</title>
+    <title>Blog - Fsmaky Global | Your Vehicle Importation Partner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -13,10 +13,11 @@
             --dark-blue: #004C97;
             --light-blue: #E6F2FF;
             --accent-gold: #D4AF37;
+            --warm-gray: #f8f9fa;
             --dark-gray: #222222;
             --medium-gray: #555555;
-            --light-gray: #f8f9fa;
             --white: #ffffff;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -57,7 +58,7 @@
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-size: 1rem;
             box-shadow: 0 4px 6px rgba(0, 102, 204, 0.2);
         }
@@ -66,17 +67,6 @@
             background-color: var(--dark-blue);
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 102, 204, 0.3);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--primary-blue);
         }
 
         section {
@@ -108,7 +98,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         header.scrolled {
@@ -123,19 +113,10 @@
             padding: 15px 20px;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-       .logo-img {
-    height: 60px;   /* Adjust to what looks good */
-    width: auto;
-    object-fit: contain;
-       }
-
-        .logo-text span {
-            color: var(--dark-blue);
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
         }
 
         nav ul {
@@ -152,7 +133,7 @@
             text-decoration: none;
             color: var(--dark-gray);
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: var(--transition);
             font-size: 15px;
         }
 
@@ -184,421 +165,352 @@
             cursor: pointer;
         }
 
-       /* Blog Page Hero Section */
-.blog-hero {
-    background: linear-gradient(135deg, rgba(0, 76, 151, 0.65) 0%, rgba(0, 102, 204, 0.6) 100%),
+        /* Blog Hero Section */
+        .blog-hero {
+            background:
+                linear-gradient(135deg, rgba(0, 76, 151, 0.75) 0%, rgba(0, 102, 204, 0.65) 100%),
                 url('images/DSC5935.jpeg');
-    background-size: cover;
-    background-position: center 40%;
-    background-attachment: fixed;
-    color: var(--white);
-    text-align: center;
-    padding: 180px 0 120px;
-    position: relative;
-    overflow: hidden;
-}
+            background-size: cover;
+            background-position: center 40%;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.blog-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.3) 0%, rgba(0, 76, 151, 0.5) 100%);
-    z-index: 0;
-}
-
-.blog-hero .container {
-    position: relative;
-    z-index: 2;
-}
-
-.blog-hero h1 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-    color: var(--white);
-}
-
-.blog-hero p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.blog-hero .breadcrumb {
-    display: inline-flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 50px;
-    padding: 10px 25px;
-    list-style: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    margin-top: 30px;
-}
-
-.blog-hero .breadcrumb li {
-    margin: 0 8px;
-    font-size: 1rem;
-    color: var(--white);
-    position: relative;
-}
-
-.blog-hero .breadcrumb li a {
-    color: var(--white);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.blog-hero .breadcrumb li a:hover {
-    color: var(--accent-gold);
-}
-
-.blog-hero .breadcrumb li:after {
-    content: '›';
-    margin-left: 15px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.blog-hero .breadcrumb li:last-child:after {
-    content: '';
-}
-
-/* Small Floating Decorations */
-.blog-hero .decoration {
-    position: absolute;
-    z-index: 1;
-}
-
-.blog-hero .decoration.circle-1 {
-    width: 120px;
-    height: 120px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    top: 20%;
-    left: 10%;
-    animation: float 6s ease-in-out infinite;
-}
-
-.blog-hero .decoration.circle-2 {
-    width: 80px;
-    height: 80px;
-    border: 2px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    bottom: 15%;
-    right: 12%;
-    animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-    .blog-hero {
-        background-attachment: scroll;
-        padding: 140px 0 90px;
-    }
-
-    .blog-hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .blog-hero p {
-        font-size: 1rem;
-    }
-
-    .blog-hero .decoration {
-        display: none;
-    }
-}
-        /* Blog Articles Section */
-.blog-section {
-    background: linear-gradient(135deg, var(--light-gray) 0%, #f0f7ff 100%);
-    position: relative;
-    padding: 100px 0;
-}
-
-.blog-section:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
-}
-
-.blog-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.blog-card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    text-align: center;
-    position: relative;
-}
-
-.blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.blog-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.blog-content {
-    padding: 30px 20px;
-}
-
-.blog-content h3 {
-    color: var(--dark-blue);
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-}
-
-.blog-content p {
-    color: var(--medium-gray);
-    font-size: 1rem;
-    margin-bottom: 25px;
-}
-
-.blog-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background: var(--primary-blue);
-    color: var(--white);
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.blog-btn:hover {
-    background: var(--dark-blue);
-    transform: translateY(-4px);
-}
-
-/* Popup Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 600px;
-    width: 90%;
-    text-align: left;
-    position: relative;
-}
-
-.modal-content h2 {
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-}
-
-.modal-content p {
-    color: var(--medium-gray);
-    line-height: 1.7;
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 22px;
-    color: var(--dark-gray);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close-btn:hover {
-    color: var(--primary-blue);
-}
-/* Page Header */
-        .page-header {
-    background:
-        linear-gradient(135deg, rgba(25, 25, 112, 0.6) 0%, rgba(70, 130, 180, 0.5) 100%),
-        url('images/_DSC5942.JPG');
-    background-size: cover;
-    background-position: center 65%;
-    background-attachment: fixed;
-    color: var(--white);
-    padding: 180px 0 100px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-        .page-header:before {
+        .blog-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
-                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            background:
+                radial-gradient(circle at 20% 80%, rgba(42, 157, 143, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
             z-index: 1;
         }
 
-        .page-header .container {
+        .blog-hero .container {
             position: relative;
             z-index: 2;
         }
 
-        .page-header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
+        .blog-hero h1 {
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 25px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
-            position: relative;
-            display: inline-block;
+            line-height: 1.2;
+            color: var(--white);
         }
 
-        .page-header h1:after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--accent-gold);
-            border-radius: 2px;
-        }
-
-        .page-header p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 40px auto 50px;
+        .blog-hero p {
+            font-size: 1.2rem;
             font-weight: 300;
-            line-height: 1.7;
-            opacity: 0.95;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .breadcrumb {
+        .blog-hero .breadcrumb {
             display: inline-flex;
             justify-content: center;
-            list-style: none;
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             border-radius: 50px;
-            padding: 12px 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 10px 25px;
+            list-style: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 30px;
         }
 
-        .breadcrumb li {
+        .blog-hero .breadcrumb li {
             margin: 0 8px;
             font-size: 1rem;
+            color: var(--white);
             position: relative;
         }
 
-        .breadcrumb li a {
+        .blog-hero .breadcrumb li a {
             color: var(--white);
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            padding: 5px 10px;
-            border-radius: 4px;
+            transition: var(--transition);
         }
 
-        .breadcrumb li a:hover {
+        .blog-hero .breadcrumb li a:hover {
             color: var(--accent-gold);
-            background: rgba(255, 255, 255, 0.1);
         }
 
-        .breadcrumb li:after {
+        .blog-hero .breadcrumb li:after {
             content: '›';
             margin-left: 15px;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.2rem;
         }
 
-        .breadcrumb li:last-child:after {
+        .blog-hero .breadcrumb li:last-child:after {
             content: '';
         }
 
-        .decoration {
+        /* Blog Articles Section */
+        .blog-section {
+            background: linear-gradient(135deg, var(--warm-gray) 0%, #f0f7ff 100%);
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .blog-section:before {
+            content: '';
             position: absolute;
-            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
         }
 
-        .decoration.circle-1 {
-            width: 120px;
-            height: 120px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 30px 20px;
+        }
+
+        .blog-content h3 {
+            color: var(--dark-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .blog-content p {
+            color: var(--medium-gray);
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .blog-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .blog-btn:hover {
+            background: var(--dark-blue);
+            transform: translateY(-4px);
+        }
+
+        /* Author Section */
+        .author-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .author-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--warm-gray);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .author-image {
+            flex: 0 0 200px;
+        }
+
+        .author-image img {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            top: 15%;
-            left: 10%;
-            animation: float 6s ease-in-out infinite;
+            object-fit: cover;
+            border: 5px solid var(--primary-blue);
         }
 
-        .decoration.circle-2 {
-            width: 80px;
-            height: 80px;
-            border: 2px solid rgba(255, 255, 255, 0.08);
+        .author-info {
+            flex: 1;
+        }
+
+        .author-info h3 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .author-info .title {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .author-info p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+
+        .author-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .author-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: var(--white);
             border-radius: 50%;
-            bottom: 20%;
-            right: 12%;
-            animation: float 8s ease-in-out infinite;
+            transition: var(--transition);
         }
 
-        .decoration.line {
-            width: 2px;
-            height: 100px;
-            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
-            top: 30%;
-            right: 20%;
-            animation: pulse 3s ease-in-out infinite;
+        .author-social a:hover {
+            background: var(--dark-blue);
+            transform: translateY(-3px);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
         }
+
+        .newsletter-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .newsletter-container p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: var(--accent-gold);
+            color: var(--dark-gray);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: #e6c12e;
+            transform: translateY(-3px);
+        }
+
+        /* Popup Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 90%;
+            text-align: left;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 22px;
+            color: var(--dark-gray);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--primary-blue);
+        }
+
         /* CTA Section */
         .cta {
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 76, 151, 0.9)), url('https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
@@ -677,7 +589,7 @@
         .footer-col ul li a {
             color: #cccccc;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .footer-col ul li a:hover {
@@ -697,73 +609,10 @@
             font-size: 0.9rem;
         }
 
-        /* Popup Overlay */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.7);
-  backdrop-filter: blur(4px);
-  overflow: hidden;
-}
-
-/* Modal Box */
-.modal-content {
-  background: #fff;
-  margin: 5% auto;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 800px;
-  max-height: 80vh; /* Limits height */
-  overflow-y: auto; /* Enables internal scrolling */
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-  font-family: 'Open Sans', sans-serif;
-  color: #333;
-  line-height: 1.8;
-  position: relative;
-}
-
-/* Scrollbar styling (optional for neat look) */
-.modal-content::-webkit-scrollbar {
-  width: 8px;
-}
-.modal-content::-webkit-scrollbar-thumb {
-  background-color: #0066CC;
-  border-radius: 4px;
-}
-
-/* Close button */
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 22px;
-  color: #333;
-  cursor: pointer;
-}
-.close-btn:hover {
-  color: #0066CC;
-}
         /* Responsive Design */
         @media (max-width: 992px) {
-            .hero h1 {
+            .blog-hero h1 {
                 font-size: 2.6rem;
-            }
-
-            .about-content, .story-content, .what-we-do-content {
-                flex-direction: column;
-            }
-
-            .about-image, .story-image, .what-we-do-image {
-                margin-top: 30px;
-            }
-
-            .page-header h1 {
-                font-size: 3rem;
             }
         }
 
@@ -796,40 +645,26 @@
                 margin: 0 0 15px 0;
             }
 
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
+            .blog-hero h1 {
+                font-size: 2.2rem;
             }
 
-            .btn {
-                width: 100%;
-                max-width: 300px;
+            .author-container {
+                flex-direction: column;
                 text-align: center;
             }
 
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .page-header h1 {
-                font-size: 2.2rem;
+            .newsletter-form {
+                flex-direction: column;
             }
 
             .cta h2 {
                 font-size: 2.2rem;
             }
-
-            .page-header {
-                background-attachment: scroll;
-            }
-
-            .decoration {
-                display: none;
-            }
         }
 
         @media (max-width: 576px) {
-            .hero h1 {
+            .blog-hero h1 {
                 font-size: 1.9rem;
             }
 
@@ -837,93 +672,9 @@
                 padding: 60px 0;
             }
 
-            .hero {
+            .blog-hero {
                 padding: 150px 0 80px;
             }
-
-            .value-card, .service-card {
-                min-width: 100%;
-            }
-
-            .page-header h1 {
-                font-size: 1.9rem;
-            }
-
-           .breadcrumb {
-            display: inline-flex;
-            justify-content: center;
-            list-style: none;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            padding: 12px 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .breadcrumb li {
-            margin: 0 8px;
-            font-size: 1rem;
-            position: relative;
-        }
-
-        .breadcrumb li a {
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        .breadcrumb li a:hover {
-            color: var(--accent-gold);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .breadcrumb li:after {
-            content: '›';
-            margin-left: 15px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.2rem;
-        }
-
-        .breadcrumb li:last-child:after {
-            content: '';
-        }
-
-        .decoration {
-            position: absolute;
-            z-index: 1;
-        }
-
-        .decoration.circle-1 {
-            width: 120px;
-            height: 120px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            top: 15%;
-            left: 10%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .decoration.circle-2 {
-            width: 80px;
-            height: 80px;
-            border: 2px solid rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            bottom: 20%;
-            right: 12%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .decoration.line {
-            width: 2px;
-            height: 100px;
-            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
-            top: 30%;
-            right: 20%;
-            animation: pulse 3s ease-in-out infinite;
-        }
         }
     </style>
 </head>
@@ -931,9 +682,9 @@
     <!-- Header -->
     <header>
         <div class="header-container container">
-           <div class="logo">
-    <img src="images/FSMAKY LOGO.png" alt="Fsmaky Global Logo" class="logo-img">
-        </div>
+            <div class="logo">
+                <img src="images/FSMAKY LOGO.png" alt="Fsmaky Global Logo" class="logo-img">
+            </div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -949,66 +700,99 @@
             </nav>
         </div>
     </header>
-        
-<!-- ✅ Blog Hero Section -->
-  <section class="blog-hero">
-    <div class="container">
-      <h1>Insights & Tips for Smart Car Buyers</h1>
-      <p>Stay informed with expert advice on car imports, insurance, and budgeting — all tailored for Zimbabwean drivers.</p>
-       <ul class="breadcrumb">
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Insights & Tips for Smart Car Buyers</h1>
+            <p>Stay informed with expert advice on car imports, insurance, and budgeting — all tailored for Zimbabwean drivers.</p>
+            <ul class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
-    </div>
-  </section>
-
-  <!-- ✅ Blog Section -->
-  <section class="blog-section">
-    <div class="blog-container">
-
-      <!-- Blog 1 -->
-      <div class="blog-card">
-        <img src="images/BLOG 1.png" alt="Duty-Free Car Imports">
-        <div class="blog-content">
-          <h3>Everything You Need to Know on Duty-Free Car Imports in Zimbabwe</h3>
-          <p>Understand the eligibility, process, and benefits of duty-free vehicle importation for returning residents and special groups.</p>
-          <a href="#" class="blog-btn" onclick="openModal('modal1')">Read More</a>
         </div>
-      </div>
+    </section>
 
-      <!-- Blog 2 -->
-      <div class="blog-card">
-        <img src="images/BLOG 2.png" alt="Comprehensive Insurance">
-        <div class="blog-content">
-          <h3>Why Comprehensive Insurance is Worth It for Imported Cars</h3>
-          <p>Discover why investing in full insurance coverage can save you from costly repairs and financial loss after importing a car.</p>
-          <a href="#" class="blog-btn" onclick="openModal('modal2')">Read More</a>
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="blog-container">
+            <!-- Blog 1 -->
+            <div class="blog-card">
+                <img src="images/BLOG 1.png" alt="Duty-Free Car Imports">
+                <div class="blog-content">
+                    <h3>Everything You Need to Know on Duty-Free Car Imports in Zimbabwe</h3>
+                    <p>Understand the eligibility, process, and benefits of duty-free vehicle importation for returning residents and special groups.</p>
+                    <a href="#" class="blog-btn" onclick="openModal('modal1')">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog 2 -->
+            <div class="blog-card">
+                <img src="images/BLOG 2.png" alt="Comprehensive Insurance">
+                <div class="blog-content">
+                    <h3>Why Comprehensive Insurance is Worth It for Imported Cars</h3>
+                    <p>Discover why investing in full insurance coverage can save you from costly repairs and financial loss after importing a car.</p>
+                    <a href="#" class="blog-btn" onclick="openModal('modal2')">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog 3 -->
+            <div class="blog-card">
+                <img src="images/BLOG 3.JPG" alt="Car Budget Guide">
+                <div class="blog-content">
+                    <h3>How to Choose the Best Car for Your Budget in Zimbabwe</h3>
+                    <p>Learn how to select reliable, affordable cars that match your income, lifestyle, and maintenance expectations.</p>
+                    <a href="#" class="blog-btn" onclick="openModal('modal3')">Read More</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Blog 3 -->
-      <div class="blog-card">
-        <img src="images/BLOG 3.JPG" alt="Car Budget Guide">
-        <div class="blog-content">
-          <h3>How to Choose the Best Car for Your Budget in Zimbabwe</h3>
-          <p>Learn how to select reliable, affordable cars that match your income, lifestyle, and maintenance expectations.</p>
-          <a href="#" class="blog-btn" onclick="openModal('modal3')">Read More</a>
+    <!-- Author Section -->
+    <section class="author-section">
+        <div class="container">
+            <div class="author-container">
+                <div class="author-image">
+                    <img src="images/DSC5921.jpeg" alt="Takudzwa M. - Import Specialist">
+                </div>
+                <div class="author-info">
+                    <h3>Prince Makanga</h3>
+                    <div class="title">Import Specialist & Director</div>
+                    <p>With over 5 years of experience in vehicle importation, I'm passionate about helping Zimbabweans navigate the complex process of bringing their dream cars home. I started Fsmaky Global to make vehicle ownership accessible to everyone.</p>
+                    <div class="author-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <h2>Stay Updated with Our Latest Insights</h2>
+                <p>Join our community of smart car buyers and get helpful tips delivered directly to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <!-- ✅ Modal 1 -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
-      <h2>Everything You Need to Know on Duty-Free Car Imports in Zimbabwe</h2>
-      <p>
+    <!-- Modals (unchanged from original) -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+            <h2>Everything You Need to Know on Duty-Free Car Imports in Zimbabwe</h2>
+            <p>
   <p><strong>Duty-free car imports in Zimbabwe</strong> are generally available as specific <strong>rebates or suspensions of duty</strong> for qualifying categories of people — such as <strong>returning residents, physically handicapped individuals, diplomats, and health workers</strong> — rather than a universal allowance.</p>
 
   <h3 style="color:#004C97; margin-top:25px;">Qualifying Categories</h3>
-  
+
   <p><strong>Returning Residents (Immigrants Rebate):</strong> Zimbabwean citizens who have resided outside the country for at least two years may qualify for a <strong>suspension of customs duty</strong> (duty waived, VAT still payable) on <strong>one personal vehicle</strong>.</p>
   <ul style="margin-left:30px; margin-bottom:15px;">
     <li><strong>Conditions:</strong> The vehicle’s value must not exceed <strong>US$40,000</strong> and must have been owned and fully paid for by the immigrant for at least six months before returning.</li>
@@ -1045,21 +829,20 @@
     <li><strong>Valuation:</strong> The <a href="https://www.zimra.co.zw" target="_blank" style="color:#0066CC; text-decoration:none;">Zimbabwe Revenue Authority (ZIMRA)</a> determines the <em>Value for Duty Purposes (VDP)</em> and may reassess if the declared value seems inaccurate.</li>
   </ul>
       </p>
+        </div>
     </div>
-  </div>
 
-  <!-- ✅ Modal 2 -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
-      <h2>Why Comprehensive Insurance is Worth It for Imported Cars</h2>
-      <p>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+            <h2>Why Comprehensive Insurance is Worth It for Imported Cars</h2>
+            <p>
   <p><strong>Comprehensive insurance</strong> is highly recommended for imported cars because it offers extensive financial protection that basic, mandatory <strong>third-party insurance</strong> does not provide. The significant investment involved in purchasing and importing a vehicle — coupled with specific risks associated with imports — makes a comprehensive policy essential for <strong>financial security</strong> and <strong>peace of mind</strong>.</p>
-  
+
   <h3 style="color:#004C97; margin-top:25px;">Key Benefits of Comprehensive Insurance for Imported Cars</h3>
 
   <p><strong>1️⃣ Protection for Your Own Vehicle:</strong> The main advantage of comprehensive cover is that it insures your car against accidental damage, regardless of who is at fault. In contrast, <strong>third-party insurance</strong> in Zimbabwe only covers damage or injury you cause to others. Without comprehensive insurance, you would pay for all repairs yourself — often costly due to the difficulty of sourcing parts for imported cars.</p>
-  
+
   <p><strong>2️⃣ Coverage Against Non-Collision Risks:</strong> Comprehensive policies protect against a wide range of <strong>non-collision incidents</strong> that basic insurance excludes, including:</p>
   <ul style="margin-left:30px; margin-bottom:15px;">
     <li><strong>Theft and Vandalism:</strong> Imported vehicles are often targets for theft. Comprehensive insurance covers losses from theft or attempted theft.</li>
@@ -1079,18 +862,15 @@
   </ul>
 
   <p><strong>💡 Final Thought:</strong> Although comprehensive insurance premiums are higher than third-party cover, the cost difference is minimal compared to the potential expense of replacing or repairing an imported car. For anyone importing a vehicle into Zimbabwe, <strong>comprehensive coverage is a smart and financially sound choice</strong>.</p>
-
-      </p>
+        </div>
     </div>
-  </div>
 
-  <!-- ✅ Modal 3 -->
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
-      <h2>How to Choose the Best Car for Your Budget in Zimbabwe</h2>
-      <p>
-  
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+            <h2>How to Choose the Best Car for Your Budget in Zimbabwe</h2>
+            <p>
+
   <p><strong>To choose the best car for your budget in Zimbabwe</strong>, you should focus on the <strong>total cost of ownership</strong> — not just the purchase price. This includes import duties, taxes, fuel efficiency, maintenance, and the availability of affordable spare parts. Popular budget-friendly options include the <strong>Toyota Vitz</strong> and <strong>Honda Fit</strong>, known for their fuel economy and easy-to-source parts.</p>
 
   <h3 style="color:#004C97; margin-top:25px;">Key Factors to Consider</h3>
@@ -1130,12 +910,12 @@
     <li><strong>Pre-Purchase Inspection:</strong> Use a certified mechanic to check for hidden problems — it’s a valuable bargaining tool.</li>
     <li><strong>Research Thoroughly:</strong> Compare prices from dealerships, online platforms, and car import sites before committing.</li>
   </ul>
-
   <p style="margin-top:20px;"><strong>💡 Final Thought:</strong> A “good deal” isn’t always the cheapest one. The best car for your budget in Zimbabwe is one that balances affordability, reliability, and long-term value — so you can drive confidently and avoid costly surprises.</p>
       </p>
+        </div>
     </div>
-  </div>
-  <!-- CTA Section -->
+
+    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <h2>Ready to Start Your Vehicle Import Journey?</h2>
@@ -1187,9 +967,7 @@
                     <ul>
                         <li><a href="tel:+263715360986"><i class="fas fa-phone"></i> +263 715 360 986</a></li>
                         <li><a href="mailto:fsmaky@global.co.zw"><i class="fas fa-envelope"></i> fsmaky@global.co.zw</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 307 Regal Star House No. 25 George Silundika Ave
-
-                        Harare</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 307 Regal Star House No. 25 George Silundika Ave Harare</a></li>
                         <li><a href="#"><i class="fas fa-clock"></i> Mon - Fri: 8AM - 5PM</a></li>
                     </ul>
                 </div>
@@ -1201,48 +979,54 @@
         </div>
     </footer>
 
-  <!-- ✅ JavaScript for Modal Functionality -->
-  <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = "flex";
-    }
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
 
-    // Close modal when clicking outside content
-    window.onclick = function(event) {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(modal => {
-        if (event.target === modal) {
-          modal.style.display = "none";
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Modal functionality
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+            document.body.style.overflow = "hidden";
         }
-      });
-    }
 
-  // Open modal
-  function openModal(id) {
-    document.getElementById(id).style.display = "block";
-    document.body.style.overflow = "hidden"; // prevent page scroll
-  }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
 
-  // Close modal
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-    document.body.style.overflow = "auto"; // restore scroll
-  }
-
-  // Close modal when clicking outside of the content
-  window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      if (event.target === modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-      }
-    });
-  };
-  </script>
+        // Close modal when clicking outside of the content
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            });
+        };
+    </script>
 </body>
 </html>
