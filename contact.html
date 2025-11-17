@@ -870,23 +870,32 @@
             item.classList.toggle('active');
         });
     });
-
     document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // stop default form submit
+    event.preventDefault();
 
     const name = event.target.name.value;
     const email = event.target.email.value;
     const phone = event.target.phone.value;
     const subject = encodeURIComponent(event.target.subject.value);
-    const message = encodeURIComponent(
+    const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${event.target.message.value}`
     );
 
-    // Gmail compose link
-    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=fsmaky@global.co.zw&su=${subject}&body=${message}`;
+    const to = encodeURIComponent("fsmaky@global.co.zw");
 
-    // redirect to gmail
-    window.open(gmailURL, "_blank");
+    // Gmail app link
+    const gmailApp = `googlegmail://co?to=${to}&subject=${subject}&body=${body}`;
+
+    // Gmail web fallback
+    const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
+
+    // Try opening Gmail app
+    window.location.href = gmailApp;
+
+    // Fallback: if Gmail app doesn't open in 800ms → open Gmail web
+    setTimeout(() => {
+        window.open(gmailWeb, "_blank");
+    }, 800);
 });
 </script>
 
