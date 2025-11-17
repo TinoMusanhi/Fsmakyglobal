@@ -343,65 +343,146 @@
             transform: scale(1.05);
         }
 
-          /* Meet the Team Section */
-.team {
-    background-color: var(--light-gray);
-}
-.team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-.team-member {
-    background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    padding: 30px;
-    transition: all 0.4s ease;
-}
-.team-member:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-}
-.team-member img {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-.team-member h3 {
-    color: var(--dark-blue);
-    margin-bottom: 8px;
-}
-.team-member .position {
-    color: var(--medium-gray);
-    font-size: 0.95rem;
-}
+        /* Meet the Team Section - IMPROVED */
+        .team {
+            background-color: var(--light-gray);
+        }
 
-/* Partners Section */
-.partners {
-    background: var(--white);
-    border-top: 5px solid var(--primary-blue);
-}
-.partners-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    align-items: center;
-    justify-items: center;
-    gap: 40px;
-}
-.partner-logo img {
-    max-width: 160px;
-    height: auto;
-    filter: grayscale(100%);
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-.partner-logo img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.05);
-}
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 30px 20px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .team-member:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 4px solid var(--light-blue);
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .team-member h3 {
+            color: var(--dark-blue);
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+        }
+
+        .team-member .position {
+            color: var(--medium-gray);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member-quote {
+            font-style: italic;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--light-blue);
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .member-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .member-social a:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Partners Section */
+        .partners {
+            background: var(--white);
+            border-top: 5px solid var(--primary-blue);
+        }
+        .partners-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            align-items: center;
+            justify-items: center;
+            gap: 40px;
+        }
+        .partner-logo img {
+            max-width: 160px;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        .partner-logo img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
 
         /* Services Section */
         .services {
@@ -1169,35 +1250,53 @@
             <a href="contact.html" class="btn">Get In Touch</a>
         </div>
     </section>
-              <!-- Meet the Team -->
+
+    <!-- Meet the Team - IMPROVED -->
     <section class="team">
         <div class="container">
             <h2 class="section-title">MEET THE TEAM</h2>
+            <p class="section-subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: var(--medium-gray);">Our dedicated team brings together years of experience, expertise, and a shared passion for delivering exceptional service to every client.</p>
+
             <div class="team-container">
                 <div class="team-member">
-                    <img src="images/DSC5921.jpeg" alt="Prince Farai Stanley Makanga">
+                    <div class="member-image">
+                        <img src="images/DSC5921.jpeg" alt="Prince Farai Stanley Makanga">
+                    </div>
                     <h3>Prince Farai Stanley Makanga</h3>
-                    <p class="position">Director</p>
+                    <p class="position">Import Specialist & Operations Manager</p>
+                    <p class="member-quote">"I'm passionate about simplifying the import process and ensuring our clients get the best vehicles at the best value."</p>
                 </div>
                 <div class="team-member">
-                    <img src="images/DSC5933.jpeg" alt="Panashe Mpofu">
+                    <div class="member-image">
+                        <img src="images/DSC5933.jpeg" alt="Panashe Mpofu">
+                    </div>
                     <h3>Panashe Mpofu</h3>
                     <p class="position">Accountant</p>
+                    <p class="member-quote">"I ensure all financial transactions are transparent and accurate, giving our clients complete peace of mind."</p>
                 </div>
                 <div class="team-member">
-                    <img src="images/DSC5925.jpeg" alt="Admire Maxwell Makanga">
+                    <div class="member-image">
+                        <img src="images/DSC5925.jpeg" alt="Admire Maxwell Makanga">
+                    </div>
                     <h3>Admire Maxwell Makanga</h3>
                     <p class="position">Head of Clearing & Collection</p>
+                    <p class="member-quote">"I navigate the complexities of customs clearance to ensure your vehicle reaches you quickly and hassle-free."</p>
                 </div>
                 <div class="team-member">
-                    <img src="images/DSC5930.jpeg" alt="McWsh Tawanda Mapesa">
+                    <div class="member-image">
+                        <img src="images/DSC5930.jpeg" alt="McWsh Tawanda Mapesa">
+                    </div>
                     <h3>McWsh Tawanda Mapesa</h3>
-                    <p class="position">Driver</p>
+                    <p class="position">Driver & Logistics Specialist</p>
+                    <p class="member-quote">"I ensure your vehicle is handled with care and delivered safely to your preferred location."</p>
                 </div>
                 <div class="team-member">
-                    <img src="images/DSC5923.jpeg" alt="Keith Mapesa Mandaza">
+                    <div class="member-image">
+                        <img src="images/DSC5923.jpeg" alt="Keith Mapesa Mandaza">
+                    </div>
                     <h3>Keith Mapesa Mandaza</h3>
-                    <p class="position">Driver</p>
+                    <p class="position">Driver & Vehicle Inspector</p>
+                    <p class="member-quote">"I perform thorough vehicle inspections and ensure safe transportation to our clients."</p>
                 </div>
             </div>
         </div>
