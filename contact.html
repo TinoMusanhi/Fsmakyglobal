@@ -673,7 +673,7 @@
             <!-- Form -->
             <div class="contact-form">
                 <h3><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
-                <form action="#" method="POST">
+                <form id="contactForm">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Full Name" required>
                     </div>
@@ -870,6 +870,24 @@
             item.classList.toggle('active');
         });
     });
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // stop default form submit
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+    const subject = encodeURIComponent(event.target.subject.value);
+    const message = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${event.target.message.value}`
+    );
+
+    // Gmail compose link
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=fsmaky@global.co.zw&su=${subject}&body=${message}`;
+
+    // redirect to gmail
+    window.open(gmailURL, "_blank");
+});
 </script>
 
 </body>
