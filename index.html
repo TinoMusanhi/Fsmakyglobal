@@ -25,6 +25,20 @@
             box-sizing: border-box;
         }
 
+        .nice-link {
+    color: #1900ff;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.nice-link:hover {
+    color: #1900d7;
+    border-bottom: 2px solid #0055ff;
+}
+
+
         body {
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
@@ -476,6 +490,48 @@
             font-weight: bold;
         }
 
+        .process-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.process-step {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.process-step h4 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.down-arrow {
+    font-size: 22px;
+    color: #ff7a00; /* nice orange for theme */
+    animation: bounce 1.3s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+/* Mobile */
+@media(max-width: 600px) {
+    .process-step {
+        max-width: 95%;
+    }
+}
+
         /* Testimonials Section */
         .testimonials {
             position: relative;
@@ -794,9 +850,9 @@
             <h2 class="section-title">COMPANY OVERVIEW</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Fsmaky Global Pvt Ltd is a premier vehicle importation, registration, and logistics service provider dedicated to helping individuals and businesses import, clear, register, insure, and maintain vehicles with absolute ease.</p>
-                    <p>We simplify the entire process from selecting a car that fits your budget to handling customs, licensing, and insurance, ensuring our clients enjoy a smooth and transparent experience from start to finish.</p>
-                    <p>Our team partners with trusted suppliers, insurance companies, and clearance agents to guarantee reliability, authenticity, and competitive pricing. Whether you're buying your first car or managing a fleet, we provide step-by-step support and expert guidance every step of the way.</p>
+                    <p>Fsmaky Global Pvt Ltd is an ultimate motoring solutions company, dedicated to making car ownership simple, secure, and stress-free. We provide comprehensive motoring solution from the simplified acquisition journey of vehicle ownership all the way through the vehicle importation, clearance, registration, and support processes.</p>
+                    <p>Our value chain process involves expertise in areas of customs clearance, insurance process and trusted suppliers to guarantee reliability, authenticity, and competitive pricing. Leveraging modern digital tools and real-time tracking systems, we ensure transparency, faster processing, and a more efficient customer experience throughout every stage of the journey.</p>
+                    <p>Whether you're buying your first car or managing a fleet, we provide step-by-step support and expert guidance every step of the way.</p>
                     <a href="about.html" class="btn" style="margin-top: 20px;">Learn More About Us</a>
                 </div>
                 <div class="about-image">
@@ -810,7 +866,7 @@
     <section class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem;">At Fsmaky Global Pvt Ltd, we handle every step of the vehicle ownership process with professionalism, transparency, and care. Whether you're importing, clearing, or registering your vehicle, we've got you covered.</p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem;">At Fsmaky Global Pvt Ltd, we handle every step of the vehicle ownership process with transparency, professionalism and care. Whether you're importing, clearing, or registering your vehicle, we've got you covered.</p>
 
             <div class="services-container">
                 <!-- Vehicle Importation -->
@@ -820,12 +876,44 @@
                     </div>
                     <div class="service-content">
                         <h3>Vehicle Importation</h3>
-                        <p>We help clients source vehicles from trusted suppliers worldwide. Our team manages quotations, pre-shipment inspections, and delivery logistics ensuring every import meets Zimbabwean standards and arrives safely.</p>
-                        <ul>
-                            <li>Supplier verification</li>
-                            <li>Cost estimates and import guidance</li>
-                            <li>Tracking and updates until delivery</li>
-                        </ul>
+                        <p>With our partnership with major suppliers such as Beforward and SBT, and other vehicle suppliers, we provide comprehensive vehicle sourcing processes, facilitation of payments upto point of discharge.</p>
+                    <div class="process-flow">
+
+    <!-- Stage 1 -->
+    <div class="process-step">
+        <h4>Source Market</h4>
+        <p>SBT, Beforward and China.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 2 -->
+    <div class="process-step">
+        <h4>Vehicle Reservation</h4>
+        <p>Takes 24–48 hours.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 3 -->
+    <div class="process-step">
+        <h4>Payment Process</h4>
+        <p>We provide a transparent platform for direct payments or handle payments with full receipts and documents for audit clarity.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 4 -->
+    <div class="process-step">
+        <h4>Shipping Process</h4>
+        <p>Average shipping time is 4–6 weeks.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 5 -->
+    <div class="process-step">
+        <h4>Delivery</h4>
+        <p>Delivered to major ports: Dar es Salaam, Durban, Beira, Walvis Bay.</p>
+    </div>
+
+</div>
                     </div>
                 </div>
 
@@ -837,11 +925,30 @@
                     <div class="service-content">
                         <h3>Vehicle Clearance</h3>
                         <p>We handle all customs paperwork and procedures to make sure your vehicle is cleared quickly and efficiently, navigating ZIMRA requirements with expertise.</p>
-                        <ul>
-                            <li>ZIMRA documentation</li>
-                            <li>Duty calculation support</li>
-                            <li>Port clearance and logistics coordination</li>
-                        </ul>
+                        <div class="process-flow">
+
+    <!-- Stage 1 -->
+    <div class="process-step">
+        <h4>Clearance at Port of Discharge</h4>
+        <p>We ensure all port-side documentation is processed efficiently.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 2 -->
+    <div class="process-step">
+        <h4>Clearance at Transit Port</h4>
+        <p>We manage transit compliance and paperwork for smooth movement.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 3 -->
+    <div class="process-step">
+        <h4>Clearance at Country of Delivery</h4>
+        <p>We process ZIMRA requirements to finalize quick and efficient clearance.</p>
+    </div>
+
+</div>
+
                     </div>
                 </div>
 
@@ -853,11 +960,43 @@
                     <div class="service-content">
                         <h3>Vehicle Registration</h3>
                         <p>Get your vehicle fully licensed and road-ready without the hassle. We take care of all the registration steps to ensure compliance and peace of mind.</p>
-                        <ul>
-                            <li>Number plate registration</li>
-                            <li>Licensing and ownership documents</li>
-                            <li>Roadworthy compliance assistance</li>
-                        </ul>
+                        <div class="process-flow">
+
+    <!-- Stage 1 -->
+    <div class="process-step">
+        <h4>Clearing Documents</h4>
+        <p>Invoice, Bill of Lading, Export Certificate, National ID, and Proof of Payment.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 2 -->
+    <div class="process-step">
+        <h4>Insurance & Radio Licensing</h4>
+        <p>We help you secure mandatory vehicle insurance and radio license.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 3 -->
+    <div class="process-step">
+        <h4>VTS & Inspection</h4>
+        <p>Vehicle Tracking System registration and physical inspection for compliance.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 4 -->
+    <div class="process-step">
+        <h4>Vehicle Number Plating</h4>
+        <p>Official number plate allocation and processing.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 5 -->
+    <div class="process-step">
+        <h4>Vehicle Licensing (ZINARA)</h4>
+        <p>Final ZINARA licensing to make your vehicle fully road-legal.</p>
+    </div>
+
+</div>
                     </div>
                 </div>
 
@@ -868,12 +1007,37 @@
                     </div>
                     <div class="service-content">
                         <h3>Vehicle Insurance</h3>
-                        <p>We connect clients with reputable insurance providers offering competitive premiums and reliable cover, ensuring your investment is protected.</p>
-                        <ul>
-                            <li>Third-party and comprehensive cover options</li>
-                            <li>Assistance with claims and renewals</li>
-                            <li>Partnership with top insurance companies</li>
-                        </ul>
+                        <p>We are incorporated with <a href="https://www.cbz.co.zw/insurance" class="nice-link" > CBZ insurance </a> to provide all vehicle insurance services </p>
+                        <div class="process-flow">
+
+    <!-- Stage 1 -->
+    <div class="process-step">
+        <h4>Comprehensive Transit Insurance</h4>
+        <p>Insurance during shipping and transit (1.55% of invoice value).</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 2 -->
+    <div class="process-step">
+        <h4>Comprehensive Vehicle Insurance</h4>
+        <p>Full cover based on the vehicle market value.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 3 -->
+    <div class="process-step">
+        <h4>Third-Party Vehicle Insurance</h4>
+        <p>Affordable and legally required third-party cover.</p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 4 -->
+    <div class="process-step">
+        <h4>Other Related Vehicle Insurance</h4>
+        <p>Additional custom insurance packages based on customer needs.</p>
+    </div>
+
+</div>
                     </div>
                 </div>
 
@@ -884,12 +1048,27 @@
                     </div>
                     <div class="service-content">
                         <h3>Vehicle Maintenance Assistance</h3>
-                        <p>We help clients find trusted mechanics and service centres for regular maintenance or repairs, ensuring your vehicle stays in optimal condition.</p>
-                        <ul>
-                            <li>Workshop referrals</li>
-                            <li>Maintenance scheduling reminders</li>
-                            <li>Quality assurance and parts sourcing support</li>
-                        </ul>
+                        <p>We believe that a well maintained car needs no repair. We offer comprehensive vehicle maintanance, we do not repair cars. We also offer complimentary vehicle services for all imports through our company and vehicle check assessments for local purchases.</p>
+                        <div class="process-flow">
+
+    <!-- Stage 1 -->
+    <div class="process-step">
+        <h4>Minor Vehicle Services</h4>
+        <p>Oil changes, filter replacements, tire pressure checks, and basic inspections. </p>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 2 -->
+    <div class="process-step">
+        <h4>Medium Vehicle Services</h4>
+        <p>Brake servicing, suspension inspection, battery testing, fluid top-ups, and minor repairs. </p>
+    </div>
+    <div class="down-arrow"><i class="fas fa-arrow-down"></i></div>
+
+    <!-- Stage 3 -->
+    <div class="process-step">
+        <h4>Major Vehicle Services</h4>
+        <p>Engine diagnostics, transmission checks, major part replacements, and in-depth inspections.</p>
+    </div>
                     </div>
                 </div>
             </div>
